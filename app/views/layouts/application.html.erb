@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Employee Recognition Platform</title>
+    <title>Valar's Blog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,8 +11,18 @@
   </head>
 
   <body>
-
-
+<p>
+<% if Author_signed_in? %>
+  Logged in as <strong><%= current_Author.email %></strong>.
+  <%= link_to 'Edit profile', edit_Author_registration_path %> |
+  <%= link_to "Logout", destroy_Author_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign up", new_Author_registration_path %> |
+  <%= link_to "Login", new_Author_session_path %>
+<% end %>
+</p>
+<p>
+<%= link_to "Valar's Blog", root_path %>
     <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
 
