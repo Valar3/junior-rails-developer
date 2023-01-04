@@ -2,5 +2,6 @@
 
 Rails.application.routes.draw do
   devise_for :Author
-  root 'home#index'
+  root 'posts#index'
+  resources :posts, only: [:show, :index]
 end
