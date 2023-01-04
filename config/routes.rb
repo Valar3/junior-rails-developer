@@ -3,5 +3,5 @@
 Rails.application.routes.draw do
   devise_for :Author
   root 'posts#index'
-  resources :posts, only: [:show, :index]
+  resources :posts, only: [:show, :index, :new, :create]
 end
