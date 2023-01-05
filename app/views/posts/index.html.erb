@@ -6,7 +6,7 @@
       <th>Title</th>
       <th>Description</th>
       <th>Author email</th>
-      <th>Actions</th>
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
 
@@ -16,8 +16,13 @@
         <td><%= post.title %></td>
         <td><%= post.description %></td>
         <td><%= post.Author_email %></td>
-        <td>Placeholder</td>
-      </tr>
+        <td><%=button_to 'Show', post_path(post), method: :get %></td>
+        <td><%=button_to 'Edit', edit_post_path(post), method: :get %></td>
+        <td><%=button_to 'Delete', post_path(post), method: :delete %> </td>
+
     <% end %>
   </tbody>
 </table>
+<p>
+    <%=button_to "Create New Post", new_post_path , method: :get%>
+</P>
