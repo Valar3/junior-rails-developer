@@ -19,7 +19,7 @@
         <td><%=button_to 'Show', post_path(post), method: :get %></td>
        <% if Author_signed_in? && post.author == current_Author %>
           <td><%=button_to 'Edit', edit_post_path(post), method: :get %></td>
-          <td><%=button_to 'Delete', post_path(post), method: :delete %> </td>
+          <td><%=button_to 'Delete', post_path(post), method: :delete, data: {confirm: "Are you sure?"}  %> </td>
         <% end %>
     <% end %>
   </tbody>
