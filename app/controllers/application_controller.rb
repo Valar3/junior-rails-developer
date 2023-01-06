@@ -3,7 +3,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_Author!
   def require_author
-    if !logged_in?
+    if !Author_signed_in?
       flash[:alert] = "You must be logged in to perform that action"
       redirect_to login_path
     end

@@ -3,8 +3,8 @@
 <p><strong>Description: </strong> <%= @post.description %> </p>
 <p> by <%= @post.author.email if @post.author%></P>
 <P>
- <% if logged_in? && @post.author == current_author %>
-          <%= button_to "Edit", edit_post_path(@post), class: "btn btn-outline-info" %>
+ <% if Author_signed_in? && @post.author == current_Author %>
+          <%= button_to "Edit", edit_post_path(@post), method: :get %>
           <%= button_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"} %>
           <% end %>
 </P>
