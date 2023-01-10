@@ -17,8 +17,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:title, :description, :author_id ))
-    if @post.save
+    @post = current_Author.posts.new(post_params)
+       if @post.save
       flash[:notice] = "Post was created successfully"
       redirect_to @post
     else
@@ -38,5 +38,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path
+  end
+private
+
+  def post_params
+    params.require(:post).permit(:title, :description, :author_id, :category_id )
   end
 end

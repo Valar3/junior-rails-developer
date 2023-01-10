@@ -1,6 +1,7 @@
 <h1>Showing posts details</h1>
 <p><strong>Title:</strong> <%= @post.title %></p>
 <p><strong>Description: </strong> <%= @post.description %> </p>
+<p><Strong>Category </strong> <%= @post.category.name%> </p>
 <p> by <%= @post.author.email if @post.author%></P>
 <P>
  <% if Author_signed_in? && @post.author == current_Author %>
