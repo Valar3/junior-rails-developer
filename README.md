@@ -1,11 +1,3 @@
-# Employee Recognition Platfrom
-
-### Setup
-```
-bin/setup
-```
-
-### How to start the app
-```
-rails server
-```
+# Valar's Blog
+Author (admin) login: balonw@gmail.com , password: qQWymNmxZq5rKym
+Authir (normal user): eg. otis.brakus@gmail.com, password: pass555
