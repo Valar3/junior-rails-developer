@@ -4,7 +4,6 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.string :title
       t.text :description
       t.datetime :published_at
-      t.index_authors_on_email
     end
   end
 end
