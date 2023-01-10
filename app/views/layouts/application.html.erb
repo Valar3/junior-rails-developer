@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Employee Recognition Platform</title>
+    <title>Valar's Blog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,32 @@
   </head>
 
   <body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="<%= root_path%>" >Valar's Blog</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+<p class="navbar-text float-right">
+<% if Author_signed_in? %>
+  Logged in as <strong><%= current_Author.email %></strong>.
+  <%= button_to 'Edit profile', edit_Author_registration_path, method: :get , :class => 'navbar-link' %> |
+  <%= button_to "Logout", destroy_Author_session_path, method: :delete %>
+<% else %>
+  <%= button_to "Sign up", new_Author_registration_path,method: :get, :class => 'navbar-link'  %> |
+  <%= button_to "Login", new_Author_session_path, :class => 'navbar-link'  %>
+<% end %>
+</p>
+
+
+    </div>
+  </div>
+</nav>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
